@@ -1,0 +1,24 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+    <link rel="stylesheet" type="text/css" href={% static 'profile.css' %}>
+
+</head>
+<script src="{% static 'jquery.min.js' %}"></script>
+<body class="bgimg">
+    <div  class="cen">
+        <form method="post" action="{% url 'update_pr_st' %}">
+            {% csrf_token %}
+            <br><br>
+                FIRSTNAME: <input type="text" value={{b.first_name}} name="first_name"><br><br>
+                LASTNAME: <input type="text" value={{b.last_name}} name="last_name"><br><br>
+                EMAIL    :<input type="email" value={{b.email}} name="email"><br><br>
+                PASSWORD: <input type="password" value={{b.password}} name="psw"><br><br>
+                <button type="submit">UPDATE</button><br><br>
+                <button id="update">BACK</button><br><br>
+        </form>
+    </div>
+</body>
+</html>
