@@ -2,23 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>admin</title>
-    <link rel="stylesheet" type="text/css" href={% static 'profile.css' %}>
+    <title>Student</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'trt.css' %}">
 
 </head>
-<script src="{% static 'jquery.min.js' %}"></script>
-<body class="bgimg">
-    <div  class="cen">
-        <form method="post" action="{% url 'update_pr_st' %}">
-            {% csrf_token %}
-            <br><br>
-                FIRSTNAME: <input type="text" value={{b.first_name}} name="first_name"><br><br>
-                LASTNAME: <input type="text" value={{b.last_name}} name="last_name"><br><br>
-                EMAIL    :<input type="email" value={{b.email}} name="email"><br><br>
-                PASSWORD: <input type="password" value={{b.password}} name="psw"><br><br>
-                <button type="submit">UPDATE</button><br><br>
-                <button id="update">BACK</button><br><br>
-        </form>
-    </div>
+
+<body class= "pic" background="{% static 'trt.jpg' %}">
+    <div align="center">
+    <div style="display: block; width: 600px;">
+    <form method="post" action="{% url 'update_pr_st' %}">
+        {% csrf_token %}
+<br><br>
+    FIRSTNAME: <br><br><input type="text" value={{bb.First_name}} name="first_name"><br><br>
+    LASTNAME: <br><br><input type="text" value={{bb.Last_name}} name="last_name"><br><br>
+    EMAIL    :<br><br><input type="email" value={{bb.Email}} name="email"><br><br>
+    PASSWORD: <br><br><input type="password" value={{bb.Password}} name="psw"><br><br>
+    NUMBER OF COURSES ENROLLED: <br><br><input type="text" value={{bb.Num_of_courses_enrolled}} name="enrol"><br><br>
+    <button type="submit">UPDATE</button><br><br>
+    </form>
+        <button type="submit" onclick="location.href='{% url 'student_home' %}'" name='mybtn2'>BACK</button>
+</div>
+</div>
 </body>
 </html>

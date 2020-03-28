@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'learning.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'learn_data1',
+        'NAME': 'learn_dta',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',

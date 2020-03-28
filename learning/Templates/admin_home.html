@@ -21,12 +21,18 @@
   </div>
 
   <a href="{% url 'upl_cer' %}">upload certificate</a>
-    <a href="{% url 'msgg_admin'%}"> view messages</a>
+  <div class="dropdown">
+    <button class="dropbtn">Topics<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-content">
+        <a href="{% url 'subject_tr' %}">SUBJECT</a>
+        <a href="{% url 'chapter_tr' %}">CHAPTER</a>
+        <a href="{% url 'ch_co_tr' %}">CHAPTER CONTENT</a>
+    </div>
+  </div>
   <div class="dropdown">
     <button class="dropbtn">view<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content">
               <a href="#">Student</a>
-              <a href="{% url 'teacher_book' %}">teacher</a>
     </div>
   </div>
               <a href="{% url 'sub' %}">subject details</a>
@@ -42,24 +48,6 @@
             {% endfor %}
         {% endif %}
 </div>
-<section style="margin-left:auto;margin-right:auto;width:25%;margin-bottom:22px;position:relative;left:550px;">
-
-    <h3  style="color:white">Message</h3>
-    <div class="container">
-            <form method="POST" action="{% url 'msg_admin' %}">
-              {% csrf_token %}
-                    <label >From</label>
-                    <input type="text" name="femail" value="{{c}}" placeholder="Your email..">
-                    <label >To</label>
-                    <input type="text" name="email" placeholder="Your email..">
-                    <label for="subject">Subject</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-                    <input type="submit" value="Submit">
-
-            </form>
-    </div>
-</section>
 
 
 </body>

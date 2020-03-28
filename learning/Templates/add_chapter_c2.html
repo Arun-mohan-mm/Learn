@@ -12,12 +12,16 @@
     <h3>ADD CHAPTER CONTENT</h3>
                 <select name="sel_c">
                     <option value="Nil" selected>Select course</option>
-                    {% for i in bb %}
-                        <option value="{{i.Course_title}}">{{i.Course_title}}</option>
+                    {% for i in bk %}
+                        <option value="{{i}}">{{i}}</option>
                     {% endfor %}
                 </select><br><br>
-                <label>Enter chapter title</label><br><br>
-                <input type="text" name="ch_tit1"><br><br><br>
+                 <select name="ch_tit1">
+                    <option value="Nil" selected>Select chapter</option>
+                    {% for h in bb %}
+                        <option value="{{h}}">{{h}}</option>
+                    {% endfor %}
+                </select><br><br>
                 <label>Upload content</label><br><br>
                 <input type="file" size="17" placeholder="Attach course content" name="up_c" required><br><br><br>
                 <label>Required time to finish in seconds</label><br><br>
@@ -43,7 +47,7 @@
     <label for="three">Video</label><br><br><br>
         <input type="submit" name="submit" value="submit">&nbsp&nbsp&nbsp&nbsp
         <input type="reset" name="cancel" value="cancel">&nbsp&nbsp&nbsp&nbsp
-        <button type="submit" onclick="location.href='{% url 'teacher_home' %}'">Home</button>
+        <button type="submit" onclick="location.href='{% url 'admin_home' %}'">Home</button>
 </form>
 </div>
 </body>

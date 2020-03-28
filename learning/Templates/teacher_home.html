@@ -11,24 +11,11 @@
 <body class=" pic" background="{% static 'banner.jpg' %}">
 <div class="navbar">
   <a href="{% url 'update_pr_tr' %}">Update profile</a>
-  <div class="dropdown">
-    <button class="dropbtn">Topics<i class="fa fa-caret-down"></i></button>
-    <div class="dropdown-content">
-        <a href="{% url 'subject_tr' %}">SUBJECT</a>
-        <a href="{% url 'chapter_tr' %}">CHAPTER</a>
-        <a href="{% url 'ch_co_tr' %}">CHAPTER CONTENT</a>
-    </div>
-  </div>
-
-  <div class="dropdown">
-      <button class="dropbtn">subjects<i class="fa fa-caret-down"></i></button>
-      <div class="dropdown-content" href="{% url 'subject_tr' %}"></div>
-  </div>
-  <a href="#news">student booked details</a>
-  <a href="{% url '#' %}">schedule a test</a>
+  <a href="{% url 'subject_tr1' %}">Subject</a>
+  <a href="#news">Student booked details</a>
   <a href="#news">Messages</a>
-  <a href="#news">attendance</a>
-    <a href="{% url 'logout' %}">Logout</a>
+  <a href="#news">Attendance</a>
+  <a href="{% url 'logout' %}">Logout</a>
 </div>
 <div align="center" style="color:blue;">
         {% if messages %}
@@ -37,22 +24,5 @@
             {% endfor %}
         {% endif %}
 </div>
-<section style="margin-left:auto;margin-right:auto;width:25%;margin-bottom:22px;position:relative;left:550px;">
-    <h3  style="color:white">Message</h3>
-    <div class="container">
-            <form method="POST" action="{% url 'msg_teacher' %}">
-              {% csrf_token %}
-                    <label >From</label>
-                    <input type="text" name="femail" value="{{c2}}" placeholder="Your email..">
-                    <label >To</label>
-                    <input type="text" name="email" placeholder="Your email..">
-                    <label for="subject">Subject</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-                    <input type="submit" value="Submit">
-
-            </form>
-    </div>
-</section>
 </body>
 </html
